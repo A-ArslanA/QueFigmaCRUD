@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #0A0A0A;
+    color: white;
+    
+}
+
+
+/* Media */
+@media screen and (max-width: 845px) {
+    /* HEADER */
+    .header {
+        color: white;
+        padding: 20px;
+        height: 150px;
+        margin-right: -1px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        /* opacity: 0.6; */
+    }
+
+    .mainHeader {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 31px;
+    }
+
+    .mainHeader h1 {
+        font-weight: 400;
+        font-size: 32px;
+    }
+
+    .contentHeader .contentHeaderText {
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 36px;
+    }
+
+    .photo {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* CONTENT */
+    .card {
+        margin: 20px 15px;
+        background: #131313;
+        max-height: 650px;
+    }
+
+    .card-body {
+        padding: 30px 300px 5px 30px;
+
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: 400;
+        color:#735184;
+        margin-bottom: 31px;
+    }
+
+    .card-content {
+        font-size: 20;
+        font-weight: 400;
+        margin-bottom: 31px;
+    }
+
+    .card-litte-content {
+        font-size: 14px;
+        font-weight: 400;
+        color: #797272;
+        margin-bottom: 50px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .buttons a, button {
+        text-decoration: none;
+        margin-right: 20px;
+        padding: 15px 52px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    .card-edit-button {
+        background-color: #735184;
+        color: white;
+    }
+
+    .card-delete-button {
+        background-color: #350606;
+        color: white;
+        border: 0;
+        outline: 0;
+    }
+
+}

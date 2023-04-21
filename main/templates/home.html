@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/img.svg' %}"/>
+    <title>Home</title>
+    <style>
+        .header {
+            background-image: url('../static/img/headerBG.jpg');
+        }
+
+        .photo {
+            background: url('../static/img/img.svg');
+        }
+
+        .a-div {
+            margin: 35px 30px;
+            display: flex;
+
+        }
+
+        .a-div a {
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            padding: 20px 52px;
+            background-color: #131313;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="mainHeader">
+                    <h1>Que</h1> 
+                    <div class="photo"></div>
+            </div>
+            <div class="contentHeader">
+                <p class="contentHeaderText">
+                    Hello!<br>
+                    I will ...<br>
+                    Learn how to<br> 
+                    correct rotation.
+                </p>
+            </div>
+        </div>    
+    </header>
+    <!-- HEADER-END -->
+
+    <!-- CONTENT -->
+    {% if posts %}
+        {% for el in posts %}
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">{{ el.name }}</p>
+                    <p class="card-content">{{ el.content }}</p>
+                    <p class="card-litte-content">{{ el.little_content }}</p>
+                    <a class="card-more-button" href="{% url 'post-details' el.id %}"><img src="{% static 'img/more-button.svg' %}" alt="more"></a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="card">
+                <div class="card-body">
+                    <p class="card-title">No posts</p>
+                    <p class="card-content">Empty</p>
+                    <p class="card-litte-content">Empty</p>
+                </div>
+            </div>
+    {% endif %}
+        <div class="a-div">
+            <a class="add-edit-button" href="{% url 'add' %}">Add Post</a>
+        </div>
+    <!-- CONTENT-END -->
+
+    <!-- scripts -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

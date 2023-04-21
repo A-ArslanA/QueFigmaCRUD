@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/post-detail.css' %}">
+    <link rel="shortcut icon" type="image/png" href="../static/img/img.svg"/>
+    <title>Post-Details</title>
+    <style>
+        .header {
+            background-image: url('../static/img/headerBG.jpg');
+        }
+
+        .photo {
+            background: url('../static/img/img.svg');
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="mainHeader">
+                    <h1>Que</h1> 
+                    <div class="photo"></div>
+            </div>
+            <div class="contentHeader">
+                <p class="contentHeaderText">Details</p>
+            </div>
+        </div>    
+    </header>
+    <!-- HEADER-END -->
+
+    <!-- CONTENT -->
+    <div class="card">
+        <div class="card-body">
+            <p class="card-title">{{ postContext.name }}</p>
+            <p class="card-content">{{ postContext.content }}</p>
+            <p class="card-litte-content">{{ postContext.little_content }}</p>
+            <div class="buttons">
+                <a class="card-edit-button" href="{% url 'edit' postContext.id %}">Edit</a>
+                <a type="submit" class="card-delete-button" href="{% url 'delete' postContext.id %}">Delete</a>
+            </div>           
+        </div>
+    </div>
+
+    <!-- CONTENT-END -->
+
+    <!-- scripts -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
